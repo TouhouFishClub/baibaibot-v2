@@ -13,6 +13,7 @@ const DefaultOption = {
 
 class Bot {
 	messageObject = {}
+	plugins = []
 
 	constructor(option) {
 		this.BOT = Object.assign(DefaultOption, option)
@@ -26,6 +27,11 @@ class Bot {
 		await this.connectWebSocketSync().catch(e => {
 			console.log(e)
 		})
+	}
+
+	plugin(module) {
+		this.plugins.push(module)
+		return this
 	}
 
 	connectWebSocketSync() {
