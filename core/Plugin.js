@@ -1,8 +1,8 @@
 class Plugin {
-	constructor(name, Fn, rule) {
+	constructor(name, rule, Fn) {
 		this.name = name
-		this.Fn = Fn
 		this.rule = rule
+		this.Fn = Fn
 	}
 	matchRule(message) {
 		this.rule.filter(ruleOption => {
