@@ -1,0 +1,26 @@
+{
+  "anonymous": null,
+  "font": 0,
+  "group_id": 205700800,
+  "message": "我看看",
+  "message_id": -247131586,
+  "message_seq": 3617577,
+  "message_type": "group",
+  "post_type": "message",
+  "raw_message": "我看看",
+  "self_id": 1840239061,
+  "sender": {
+    "age": 0,
+    "area": "",
+    "card": "",
+    "level": "",
+    "nickname": "⑩空.blue",
+    "role": "admin",
+    "sex": "unknown",
+    "title": "",
+    "user_id": 357474405
+  },
+  "sub_type": "normal",
+  "time": 1658480500,
+  "user_id": 357474405
+}

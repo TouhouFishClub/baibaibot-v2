@@ -1,7 +1,7 @@
 const http = require("http")
 const path = require("path");
 const { LOCALE_IP } = require("../config")
-const {simplized} = require("./lib/chs_cht")
+const { simplized } = require("../lib/chs_cht")
 const {saveAlarm} = require("./ai/private/alerm")
 const {saveChat} = require("./ai/chat/collect")
 const {getUserNameInGroup, getUserNickInGroupByCache, getGroupName} = require("./cq/cache");
@@ -9,11 +9,12 @@ const { getMsgCount } = require(path.join(__dirname, './lib/mongo.js'))
 const DefaultOption = {
 	ws: -1,
 	port: -1,
+	botName: '百百',
 }
 
 class Bot {
 	messageObject = {}
-	plugins = []
+	plugins = {}
 
 	constructor(option) {
 		this.BOT = Object.assign(DefaultOption, option)
@@ -83,7 +84,7 @@ class Bot {
 				content = content.replace(/&#44;/g, ',');
 			}
 			if (content.indexOf(`[CQ:at,qq=${this.messageObject.self_id}]`) > -1) {
-				content = content.replace(new RegExp(`[CQ:at,qq=${this.messageObject.self_id}]`, 'g'), '百百');
+				content = content.replace(new RegExp(`[CQ:at,qq=${this.messageObject.self_id}]`, 'g'), this.BOT.botName);
 			}
 			content = simplized(content);
 			this.messageObject.message = content;
